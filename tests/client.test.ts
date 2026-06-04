@@ -6,6 +6,7 @@ import {
   SASConfigurationError,
   SASRateLimitError,
   SASServerError,
+  SASTimeoutError,
   SASValidationError
 } from "../src/index.js";
 
