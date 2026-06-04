@@ -13,7 +13,7 @@ This package is the planned JavaScript/TypeScript client for the SAS hosted API 
 After publication:
 
 ```bash
-npm install @sas-audit/sdk
+npm install sas-audit-client
 ```
 
 For local development:
@@ -57,7 +57,7 @@ console.log(result.isi);
 ## Public demo without API key
 
 ```ts
-import { SASClient } from "@sas-audit/sdk";
+import { SASClient } from "sas-audit-client"";
 
 const client = new SASClient();
 
@@ -140,7 +140,7 @@ npm run pack:check
 npm audit --omit=dev
 ```
 
-`@sas-audit/sdk` requires npm scope availability. If the scope is unavailable, use the fallback package name `sas-audit-client`.
+`sas-audit-client` requires npm scope availability. If the scope is unavailable, use the fallback package name `sas-audit-client`.
 
 
 ## Retry configuration
