@@ -1,57 +1,55 @@
-name: CI
+name: "CI"
 
 on:
-push:
-branches:
-- main
-- master
-pull_request:
-branches:
-- main
-- master
-workflow_dispatch:
+  push:
+    branches:
+      - "main"
+      - "master"
+  pull_request:
+    branches:
+      - "main"
+      - "master"
+  workflow_dispatch:
 
 permissions:
-contents: read
+  contents: read
 
 jobs:
-validate:
-name: Validate SDK on Node ${{ matrix.node-version }}
-runs-on: ubuntu-latest
+  validate:
+    name: "Validate SDK on Node.js ${{ matrix.node-version }}"
+    runs-on: "ubuntu-latest"
 
-```
-strategy:
-  fail-fast: false
-  matrix:
-    node-version:
-      - 18.x
-      - 20.x
-      - 24.x
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - "18.x"
+          - "20.x"
+          - "24.x"
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@v4"
 
-  - name: Setup Node.js ${{ matrix.node-version }}
-    uses: actions/setup-node@v4
-    with:
-      node-version: ${{ matrix.node-version }}
+      - name: "Setup Node.js ${{ matrix.node-version }}"
+        uses: "actions/setup-node@v4"
+        with:
+          node-version: "${{ matrix.node-version }}"
 
-  - name: Install dependencies
-    run: npm install
+      - name: "Install dependencies"
+        run: "npm install"
 
-  - name: Typecheck
-    run: npm run typecheck
+      - name: "Typecheck"
+        run: "npm run typecheck"
 
-  - name: Run unit tests
-    run: npm test
+      - name: "Run unit tests"
+        run: "npm test"
 
-  - name: Build package
-    run: npm run build
+      - name: "Build package"
+        run: "npm run build"
 
-  - name: Check npm package contents
-    run: npm run pack:check
+      - name: "Check npm package contents"
+        run: "npm run pack:check"
 
-  - name: Audit runtime dependencies
-    run: npm audit --omit=dev
-```
+      - name: "Audit runtime dependencies"
+        run: "npm audit --omit=dev"
