@@ -1,0 +1,63 @@
+{
+  "name": "@sas-audit/sdk",
+  "version": "0.1.0",
+  "description": "Node.js / TypeScript SDK for SAS - Symbiotic Autoprotection System",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/integration.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json",
+    "pack:check": "npm pack --dry-run",
+    "typecheck:all": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run pack:check",
+    "examples:health": "node examples/health.mjs",
+    "examples:whoami": "node examples/whoami.mjs",
+    "examples:diff": "node examples/diff.mjs"
+  },
+  "keywords": [
+    "sas",
+    "ai-audit",
+    "llm",
+    "hallucination-detection",
+    "ai-safety",
+    "typescript",
+    "node-sdk"
+  ],
+  "author": "Gonzalo Emir Durante",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leesintheblindmonk1999/sas-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leesintheblindmonk1999/sas-js/issues"
+  },
+  "homepage": "https://github.com/Leesintheblindmonk1999/sas-js#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
