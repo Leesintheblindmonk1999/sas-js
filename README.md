@@ -1,5 +1,7 @@
 # SAS Node SDK
 
+![CI](https://github.com/Leesintheblindmonk1999/sas-js/actions/workflows/ci.yml/badge.svg)
+
 Node.js / TypeScript SDK for **SAS - Symbiotic Autoprotection System**.
 
 This package is the planned JavaScript/TypeScript client for the SAS hosted API and self-hosted SAS deployments.
