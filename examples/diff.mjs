@@ -6,8 +6,8 @@ const client = new SASClient({
 });
 
 const result = await client.diff({
-  textA: "Paris is in France.",
-  textB: "Paris is in Germany.",
+  textA: "The Eiffel Tower is located in Paris, France, and was completed in 1889.",
+  textB: "The Eiffel Tower is located in Berlin, Germany, and was completed in 1950.",
   experimental: true
 });
 
