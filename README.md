@@ -6,7 +6,13 @@ Node.js / TypeScript SDK for **SAS - Symbiotic Autoprotection System**.
 
 This package is the planned JavaScript/TypeScript client for the SAS hosted API and self-hosted SAS deployments.
 
-> Status: initial I1 scaffold. Not published to npm yet.
+> Status: published on npm as `sas-audit-client`
+
+## Naming
+
+Repository: sas-js
+npm package: sas-audit-client
+Exported class: SASClient
 
 ## Install
 
@@ -38,7 +44,7 @@ No API key storage
 ## Quick start
 
 ```ts
-import { SASClient } from "@sas-audit/sdk";
+import { SASClient } from "sas-audit-client";
 
 const client = new SASClient({
   apiKey: process.env.SAS_API_KEY
@@ -57,7 +63,7 @@ console.log(result.isi);
 ## Public demo without API key
 
 ```ts
-import { SASClient } from "sas-audit-client"";
+import { SASClient } from "sas-audit-client";
 
 const client = new SASClient();
 
