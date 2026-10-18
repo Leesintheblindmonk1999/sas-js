@@ -46,5 +46,8 @@ export type {
   InteractionTrajectoryPoint,
   InteractionSummary,
   InteractionStabilityResponse,
-  InteractionStabilityExampleResponse
+  InteractionStabilityExampleResponse,
+  TribunalRequest,
+  TribunalResponse,
+  TribunalModuleScore
 } from "./types.js";

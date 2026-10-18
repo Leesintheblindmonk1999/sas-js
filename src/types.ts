@@ -269,6 +269,62 @@ export interface InteractionStabilityRequest {
   normalizeDemand?: boolean;
 }
 
+export interface TribunalRequest {
+  source: string;
+  response: string;
+  enableR3_1?: boolean;
+  kappaD?: number;
+  kappaR?: number;
+}
+
+export interface TribunalApiRequest {
+  source: string;
+  response: string;
+  enable_r3_1?: boolean;
+  kappa_d?: number;
+  kappa_r?: number;
+}
+
+export interface TribunalModuleScore {
+  nombre: string;
+  peso: number;
+  valor: number;
+  disparado: boolean;
+  descripcion: string;
+}
+
+export interface TribunalResponse {
+  status: string;
+  hash_source: string;
+  hash_response: string;
+  request_id: string;
+  lexical_baseline_score: number;
+  source_target_guard: number;
+  flow_penalty: number;
+  negation_penalty: number;
+  cre_isi: number;
+  arithmetic_penalty: number;
+  reference_penalty: number;
+  r3_1_guard: number | null;
+  isi_hard: number;
+  isi_soft: number;
+  isi_final: number;
+  kappa_d: number;
+  kappa_r: number;
+  zona: string;
+  riesgo: string;
+  codigo_zona: string;
+  modulos_disparados: string[];
+  modulos: TribunalModuleScore[];
+  r3_1_fired: boolean;
+  r3_1_descripcion: string | null;
+  r3_1_detalles: Record<string, unknown> | null;
+  author: string;
+  registry: string;
+  latency_ms: number;
+  [key: string]: unknown;
+}
+
 export interface InteractionStabilityApiRequest {
   conversation: InteractionTurn[];
   gamma?: number;

@@ -33,6 +33,9 @@ import type {
   RequestMethod,
   RetryOptions,
   SASClientOptions,
+  TribunalApiRequest,
+  TribunalRequest,
+  TribunalResponse,
   WhoamiResponse
 } from "./types.js";
 
@@ -48,7 +51,7 @@ import {
 
 const DEFAULT_BASE_URL = "https://sas-api.onrender.com";
 const DEFAULT_TIMEOUT_MS = 30_000;
-const SDK_USER_AGENT = "sas-node-sdk/0.1.0";
+const SDK_USER_AGENT = "sas-node-sdk/0.2.0";
 
 interface RequestOptions {
   method: RequestMethod;
@@ -93,6 +96,22 @@ export class SASClient {
 
   async whoami(): Promise<WhoamiResponse> {
     return this.request<WhoamiResponse>({ method: "GET", path: "/v1/whoami", auth: true });
+  }
+
+  async tribunal(input: TribunalRequest): Promise<TribunalResponse> {
+    const body: TribunalApiRequest = {
+      source: input.source,
+      response: input.response,
+      enable_r3_1: input.enableR3_1,
+      kappa_d: input.kappaD,
+      kappa_r: input.kappaR,
+    };
+    return this.request<TribunalResponse>({
+      method: "POST",
+      path: "/v2/audit",
+      auth: true,
+      body: removeUndefined(body),
+    });
   }
 
   async diff(input: DiffRequest): Promise<DiffResponse> {
