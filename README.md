@@ -1,6 +1,6 @@
 # SAS Node SDK
 
-![CI](https://github.com/Leesintheblindmonk1999/sas-js/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Leesintheblindmonk1999/sas-js/workflows/CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/sas-audit-client?style=for-the-badge)](https://www.npmjs.com/package/sas-audit-client)
 [![License](https://img.shields.io/badge/License-GPL--3.0%20%2B%20Durante%20Invariance-purple?style=for-the-badge)](LICENSE)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19702379-blue?style=for-the-badge)](https://doi.org/10.5281/zenodo.19702379)
