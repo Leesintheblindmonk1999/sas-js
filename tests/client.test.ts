@@ -292,7 +292,7 @@ describe("SASClient", () => {
     const init = fetchMock.mock.calls[0]?.[1] as RequestInit;
     const headers = init.headers as Record<string, string>;
 
-    expect(headers["user-agent"]).toBe("sas-node-sdk/0.1.0");
+    expect(headers["user-agent"]).toBe("sas-node-sdk/0.2.0");
   });
 
   it("maps timeout to SASTimeoutError", async () => {
